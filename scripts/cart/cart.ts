@@ -55,6 +55,26 @@ const visible = async (candidates: Locator[]) => {
   return undefined;
 };
 
+async function setQuantity(p: Page, dialog: Locator, packs: number): Promise<void> {
+  const n = String(packs);
+  const select = dialog.locator("select").first();
+  if (await select.isVisible().catch(() => false)) return void (await select.selectOption(n));
+
+  const dropdown = await visible([dialog.getByRole("button", { name: /^1$/ }), dialog.getByRole("combobox"), dialog.getByText(/^1$/)]);
+  if (dropdown) {
+    await dropdown.click();
+    const option = await visible([p.getByRole("option", { name: new RegExp(`^${n}$`) }), p.getByRole("menuitem", { name: new RegExp(`^${n}$`) }), p.getByRole("listbox").getByText(new RegExp(`^${n}$`))]);
+    if (!option) throw new Error(`quantity dropdown has no option ${n}`);
+    return void (await option.click());
+  }
+
+  for (let i = 1; i < packs; i++) {
+    const plus = await visible([dialog.getByRole("button", { name: /zwiększ|increase|\+/i })]);
+    if (!plus) throw new Error("no quantity control");
+    await plus.click();
+  }
+}
+
 async function addItem(p: Page, item: CartItem): Promise<void> {
   await p.goto(store);
   const search = await visible([
@@ -73,12 +93,8 @@ async function addItem(p: Page, item: CartItem): Promise<void> {
 
   const dialog = p.getByRole("dialog");
   await dialog.waitFor({ timeout: 5000 });
-  for (let i = 1; i < item.packs; i++) {
-    const plus = await visible([dialog.getByRole("button", { name: /zwiększ|increase|\+/i })]);
-    if (!plus) throw new Error("no quantity button");
-    await plus.click();
-  }
-  const add = await visible([dialog.getByRole("button", { name: /dodaj|add/i })]);
+  if (item.packs > 1) await setQuantity(p, dialog, item.packs);
+  const add = await visible([dialog.getByRole("button", { name: /dodaj|zaktualizuj|add|update/i })]);
   if (!add) throw new Error("no add button");
   await add.click();
   await p.waitForTimeout(1500);
