@@ -1,0 +1,20 @@
+{
+  "name": "protein-planner-scripts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "notify": "tsx notify.ts",
+    "cart": "tsx cart/cart.ts"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.5.0",
+    "nodemailer": "^7.0.6",
+    "playwright": "^1.56.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/nodemailer": "^7.0.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

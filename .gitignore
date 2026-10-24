@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env*
+!.env.example
+scripts/cart/.profile/
+cart-*.json
+service-account*.json
+.claude/

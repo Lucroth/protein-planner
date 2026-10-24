@@ -1,0 +1,197 @@
+{
+  "products": {
+    "skyr": { "name": "Skyr naturalny 150 g", "searchTerm": "skyr naturalny", "unit": "g", "packSize": 150, "aisle": "Dairy", "per": { "kcal": 63, "protein": 12, "carbs": 3.8, "fat": 0.2 } },
+    "twarog": { "name": "Twaróg półtłusty 250 g", "searchTerm": "twaróg półtłusty", "unit": "g", "packSize": 250, "aisle": "Dairy", "per": { "kcal": 130, "protein": 18, "carbs": 3.5, "fat": 4 } },
+    "serek-wiejski": { "name": "Serek wiejski 200 g", "searchTerm": "serek wiejski", "unit": "g", "packSize": 200, "aisle": "Dairy", "per": { "kcal": 97, "protein": 11, "carbs": 2, "fat": 5 } },
+    "pudding-proteinowy": { "name": "Pudding proteinowy 200 g", "searchTerm": "pudding proteinowy", "unit": "g", "packSize": 200, "aisle": "Dairy", "per": { "kcal": 78, "protein": 10, "carbs": 6, "fat": 1.5 } },
+    "mleko": { "name": "Mleko 2% 1 l", "searchTerm": "mleko 2%", "unit": "ml", "packSize": 1000, "aisle": "Dairy", "per": { "kcal": 50, "protein": 3.4, "carbs": 4.8, "fat": 2 } },
+    "mozzarella-light": { "name": "Mozzarella light 125 g", "searchTerm": "mozzarella light", "unit": "g", "packSize": 125, "aisle": "Dairy", "per": { "kcal": 160, "protein": 19, "carbs": 1, "fat": 9 } },
+    "jajka": { "name": "Jajka 10 szt", "searchTerm": "jajka 10 szt", "unit": "szt", "packSize": 10, "aisle": "Dairy", "per": { "kcal": 75, "protein": 6.5, "carbs": 0.4, "fat": 5 } },
+    "piers-kurczaka": { "name": "Filet z piersi kurczaka 500 g", "searchTerm": "filet z piersi kurczaka", "unit": "g", "packSize": 500, "aisle": "Meat & fish", "per": { "kcal": 105, "protein": 22.5, "carbs": 0, "fat": 1.5 } },
+    "filet-indyka": { "name": "Filet z indyka 400 g", "searchTerm": "filet z indyka", "unit": "g", "packSize": 400, "aisle": "Meat & fish", "per": { "kcal": 100, "protein": 22, "carbs": 0, "fat": 1.5 } },
+    "indyk-mielony": { "name": "Mięso mielone z indyka 500 g", "searchTerm": "mięso mielone z indyka", "unit": "g", "packSize": 500, "aisle": "Meat & fish", "per": { "kcal": 140, "protein": 20, "carbs": 0, "fat": 6 } },
+    "szynka-indyk": { "name": "Szynka z indyka 100 g", "searchTerm": "szynka z indyka", "unit": "g", "packSize": 100, "aisle": "Meat & fish", "per": { "kcal": 100, "protein": 19, "carbs": 1.5, "fat": 2 } },
+    "dorsz": { "name": "Filet z dorsza mrożony 400 g", "searchTerm": "filet z dorsza", "unit": "g", "packSize": 400, "aisle": "Frozen", "per": { "kcal": 77, "protein": 17, "carbs": 0, "fat": 0.7 } },
+    "losos-wedzony": { "name": "Łosoś wędzony 100 g", "searchTerm": "łosoś wędzony", "unit": "g", "packSize": 100, "aisle": "Meat & fish", "per": { "kcal": 175, "protein": 20, "carbs": 0, "fat": 10 } },
+    "tunczyk": { "name": "Tuńczyk w sosie własnym (puszka)", "searchTerm": "tuńczyk w sosie własnym", "unit": "szt", "packSize": 1, "aisle": "Cans & jars", "per": { "kcal": 120, "protein": 28, "carbs": 0, "fat": 1 } },
+    "ciecierzyca": { "name": "Ciecierzyca konserwowa (240 g po odsączeniu)", "searchTerm": "ciecierzyca konserwowa", "unit": "g", "packSize": 240, "aisle": "Cans & jars", "per": { "kcal": 115, "protein": 7, "carbs": 15, "fat": 2 } },
+    "fasola-czerwona": { "name": "Fasola czerwona konserwowa (240 g po odsączeniu)", "searchTerm": "fasola czerwona konserwowa", "unit": "g", "packSize": 240, "aisle": "Cans & jars", "per": { "kcal": 95, "protein": 7.5, "carbs": 14, "fat": 0.5 } },
+    "soczewica": { "name": "Soczewica czerwona 400 g", "searchTerm": "soczewica czerwona", "unit": "g", "packSize": 400, "aisle": "Grains & bread", "per": { "kcal": 330, "protein": 24, "carbs": 50, "fat": 1.5 } },
+    "passata": { "name": "Passata pomidorowa 500 g", "searchTerm": "passata pomidorowa", "unit": "g", "packSize": 500, "aisle": "Cans & jars", "per": { "kcal": 30, "protein": 1.4, "carbs": 6, "fat": 0.2 } },
+    "maslo-orzechowe": { "name": "Masło orzechowe 350 g", "searchTerm": "masło orzechowe", "unit": "g", "packSize": 350, "aisle": "Cans & jars", "per": { "kcal": 600, "protein": 25, "carbs": 15, "fat": 50 } },
+    "miod": { "name": "Miód 400 g", "searchTerm": "miód", "unit": "g", "packSize": 400, "aisle": "Cans & jars", "per": { "kcal": 330, "protein": 0.3, "carbs": 82, "fat": 0 } },
+    "odzywka": { "name": "Odżywka białkowa (whey)", "searchTerm": "odżywka białkowa", "unit": "g", "packSize": 700, "aisle": "Cans & jars", "per": { "kcal": 380, "protein": 73, "carbs": 10, "fat": 6 } },
+    "platki-owsiane": { "name": "Płatki owsiane 500 g", "searchTerm": "płatki owsiane", "unit": "g", "packSize": 500, "aisle": "Grains & bread", "per": { "kcal": 370, "protein": 13, "carbs": 60, "fat": 7 } },
+    "ryz": { "name": "Ryż w woreczkach 4×100 g", "searchTerm": "ryż w woreczkach", "unit": "g", "packSize": 400, "aisle": "Grains & bread", "per": { "kcal": 350, "protein": 7.5, "carbs": 78, "fat": 0.6 } },
+    "bulgur": { "name": "Kasza bulgur 400 g", "searchTerm": "kasza bulgur", "unit": "g", "packSize": 400, "aisle": "Grains & bread", "per": { "kcal": 340, "protein": 12, "carbs": 70, "fat": 1.5 } },
+    "makaron": { "name": "Makaron pełnoziarnisty 500 g", "searchTerm": "makaron pełnoziarnisty", "unit": "g", "packSize": 500, "aisle": "Grains & bread", "per": { "kcal": 350, "protein": 13, "carbs": 65, "fat": 2.5 } },
+    "tortilla": { "name": "Tortille pszenne 6 szt", "searchTerm": "tortilla pszenna", "unit": "szt", "packSize": 6, "aisle": "Grains & bread", "per": { "kcal": 120, "protein": 3.2, "carbs": 20, "fat": 3 } },
+    "chleb": { "name": "Chleb żytni razowy 500 g", "searchTerm": "chleb żytni razowy", "unit": "g", "packSize": 500, "aisle": "Grains & bread", "per": { "kcal": 220, "protein": 6, "carbs": 42, "fat": 1.5 } },
+    "ziemniaki": { "name": "Ziemniaki 1 kg", "searchTerm": "ziemniaki", "unit": "g", "packSize": 1000, "aisle": "Fruit & veg", "per": { "kcal": 77, "protein": 2, "carbs": 17, "fat": 0.1 } },
+    "banan": { "name": "Banan", "searchTerm": "banany", "unit": "szt", "packSize": 1, "aisle": "Fruit & veg", "per": { "kcal": 105, "protein": 1.3, "carbs": 27, "fat": 0.4 } },
+    "pomidorki": { "name": "Pomidorki koktajlowe 250 g", "searchTerm": "pomidory koktajlowe", "unit": "g", "packSize": 250, "aisle": "Fruit & veg", "per": { "kcal": 18, "protein": 0.9, "carbs": 3.9, "fat": 0.2 } },
+    "papryka": { "name": "Papryka czerwona", "searchTerm": "papryka czerwona", "unit": "szt", "packSize": 1, "aisle": "Fruit & veg", "per": { "kcal": 45, "protein": 2, "carbs": 10, "fat": 0.5 } },
+    "szpinak": { "name": "Szpinak baby 100 g", "searchTerm": "szpinak baby", "unit": "g", "packSize": 100, "aisle": "Fruit & veg", "per": { "kcal": 23, "protein": 2.9, "carbs": 3.6, "fat": 0.4 } },
+    "cebula": { "name": "Cebula", "searchTerm": "cebula", "unit": "szt", "packSize": 1, "aisle": "Fruit & veg", "per": { "kcal": 40, "protein": 1, "carbs": 9, "fat": 0.1 } },
+    "owoce-mrozone": { "name": "Owoce leśne mrożone 450 g", "searchTerm": "owoce leśne mrożone", "unit": "g", "packSize": 450, "aisle": "Frozen", "per": { "kcal": 50, "protein": 1, "carbs": 10, "fat": 0.3 } },
+    "warzywa-patelnia": { "name": "Warzywa na patelnię mrożone 450 g", "searchTerm": "warzywa na patelnię", "unit": "g", "packSize": 450, "aisle": "Frozen", "per": { "kcal": 45, "protein": 2, "carbs": 7, "fat": 0.5 } },
+    "brokul": { "name": "Brokuł mrożony 450 g", "searchTerm": "brokuł mrożony", "unit": "g", "packSize": 450, "aisle": "Frozen", "per": { "kcal": 30, "protein": 3, "carbs": 4, "fat": 0.4 } },
+    "oliwa": { "name": "Oliwa z oliwek", "searchTerm": "oliwa z oliwek", "unit": "ml", "packSize": 500, "aisle": "Pantry", "staple": true, "per": { "kcal": 820, "protein": 0, "carbs": 0, "fat": 91 } },
+    "sos-sojowy": { "name": "Sos sojowy", "searchTerm": "sos sojowy", "unit": "ml", "packSize": 150, "aisle": "Pantry", "staple": true, "per": { "kcal": 60, "protein": 8, "carbs": 6, "fat": 0 } },
+    "przyprawy": { "name": "Sól, pieprz, przyprawy", "searchTerm": "przyprawa", "unit": "g", "packSize": 100, "aisle": "Pantry", "staple": true, "per": { "kcal": 0, "protein": 0, "carbs": 0, "fat": 0 } },
+    "curry": { "name": "Curry w proszku", "searchTerm": "curry przyprawa", "unit": "g", "packSize": 20, "aisle": "Pantry", "staple": true, "per": { "kcal": 0, "protein": 0, "carbs": 0, "fat": 0 } },
+    "cynamon": { "name": "Cynamon", "searchTerm": "cynamon", "unit": "g", "packSize": 15, "aisle": "Pantry", "staple": true, "per": { "kcal": 0, "protein": 0, "carbs": 0, "fat": 0 } }
+  },
+  "recipes": [
+    {
+      "id": "skyr-bowl", "name": "Skyr bowl with berries & oats", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "skyr", "qty": 300 }, { "product": "owoce-mrozone", "qty": 100, "note": "thawed or straight from frozen" }, { "product": "platki-owsiane", "qty": 40 }, { "product": "miod", "qty": 10 }],
+      "steps": [{ "text": "Spoon both skyr cups into a bowl." }, { "text": "Microwave the berries for 1 minute if you want them soft.", "timerSec": 60 }, { "text": "Top with berries and oats, drizzle with honey." }]
+    },
+    {
+      "id": "twarog-bread", "name": "Cottage-cheese spread on rye bread", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "twarog", "qty": 200 }, { "product": "skyr", "qty": 50 }, { "product": "pomidorki", "qty": 100 }, { "product": "chleb", "qty": 80, "note": "2 slices" }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Mash the twaróg with skyr, salt and pepper with a fork." }, { "text": "Spread on the bread, top with halved tomatoes." }]
+    },
+    {
+      "id": "scrambled-ham", "name": "4-egg scramble with turkey ham", "slots": ["breakfast"], "effort": 1, "minutes": 10,
+      "ingredients": [{ "product": "jajka", "qty": 4 }, { "product": "szynka-indyk", "qty": 50 }, { "product": "chleb", "qty": 60 }, { "product": "pomidorki", "qty": 100 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Dice the ham. Beat the eggs with salt and pepper." }, { "text": "Heat oil on a pan over medium heat, fry the ham for 1 minute.", "timerSec": 60 }, { "text": "Pour in the eggs, stir gently until just set.", "timerSec": 180 }, { "text": "Serve with bread and tomatoes." }]
+    },
+    {
+      "id": "protein-oats", "name": "Protein oatmeal with banana", "slots": ["breakfast"], "effort": 1, "minutes": 7,
+      "ingredients": [{ "product": "platki-owsiane", "qty": 60 }, { "product": "mleko", "qty": 250 }, { "product": "odzywka", "qty": 30, "note": "1 scoop" }, { "product": "banan", "qty": 1 }],
+      "steps": [{ "text": "Put oats and milk in a big bowl." }, { "text": "Microwave on full power, stir halfway.", "timerSec": 150 }, { "text": "Let it cool 1 minute, then stir in the protein powder.", "timerSec": 60 }, { "text": "Slice the banana on top." }]
+    },
+    {
+      "id": "spinach-omelette", "name": "Spinach & mozzarella omelette", "slots": ["breakfast", "supper"], "effort": 2, "minutes": 15,
+      "ingredients": [{ "product": "jajka", "qty": 3 }, { "product": "mozzarella-light", "qty": 60 }, { "product": "szpinak", "qty": 50 }, { "product": "chleb", "qty": 60 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Beat eggs with salt and pepper. Tear the mozzarella." }, { "text": "Heat oil, wilt the spinach.", "timerSec": 60 }, { "text": "Pour in eggs, cover and cook on low.", "timerSec": 180 }, { "text": "Add mozzarella, fold in half, cook until melted.", "timerSec": 60 }, { "text": "Serve with bread." }]
+    },
+    {
+      "id": "serek-tomatoes", "name": "Serek wiejski with tomatoes & bread", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 3,
+      "ingredients": [{ "product": "serek-wiejski", "qty": 400 }, { "product": "pomidorki", "qty": 150 }, { "product": "chleb", "qty": 60 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Empty both serek cups into a bowl, add pepper." }, { "text": "Halve the tomatoes and add. Eat with bread." }]
+    },
+    {
+      "id": "pudding-parfait", "name": "Protein pudding & skyr parfait", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 3,
+      "ingredients": [{ "product": "pudding-proteinowy", "qty": 200 }, { "product": "skyr", "qty": 150 }, { "product": "banan", "qty": 1 }, { "product": "maslo-orzechowe", "qty": 15 }],
+      "steps": [{ "text": "Layer skyr and pudding in a glass." }, { "text": "Top with sliced banana and peanut butter." }]
+    },
+    {
+      "id": "breakfast-wrap", "name": "Egg & ham breakfast wrap", "slots": ["breakfast"], "effort": 2, "minutes": 10,
+      "ingredients": [{ "product": "tortilla", "qty": 1 }, { "product": "jajka", "qty": 3 }, { "product": "szynka-indyk", "qty": 50 }, { "product": "mozzarella-light", "qty": 30 }, { "product": "oliwa", "qty": 5 }],
+      "steps": [{ "text": "Scramble the eggs in oil until just set.", "timerSec": 180 }, { "text": "Warm the tortilla in a dry pan.", "timerSec": 30 }, { "text": "Fill with eggs, ham and torn mozzarella, roll up." }]
+    },
+    {
+      "id": "twarog-pancakes", "name": "Cottage-cheese protein pancakes", "slots": ["breakfast"], "effort": 2, "minutes": 20,
+      "ingredients": [{ "product": "twarog", "qty": 200 }, { "product": "jajka", "qty": 2 }, { "product": "platki-owsiane", "qty": 40 }, { "product": "owoce-mrozone", "qty": 100 }, { "product": "oliwa", "qty": 5 }, { "product": "cynamon", "qty": 1 }],
+      "steps": [{ "text": "Blend or mash twaróg, eggs, oats and cinnamon into a thick batter." }, { "text": "Let it rest so the oats soak.", "timerSec": 300 }, { "text": "Fry small pancakes on a lightly oiled pan, first side.", "timerSec": 150 }, { "text": "Flip and fry the second side.", "timerSec": 120 }, { "text": "Microwave the berries and pour over.", "timerSec": 60 }]
+    },
+    {
+      "id": "tuna-sandwich", "name": "Tuna-skyr sandwiches", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "tunczyk", "qty": 1 }, { "product": "skyr", "qty": 50 }, { "product": "chleb", "qty": 80 }, { "product": "pomidorki", "qty": 100 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Drain the tuna, mix with skyr, salt and pepper." }, { "text": "Spread on bread, top with sliced tomatoes." }]
+    },
+    {
+      "id": "chicken-rice-broccoli", "name": "Chicken, rice & broccoli", "slots": ["dinner"], "effort": 2, "minutes": 25,
+      "ingredients": [{ "product": "piers-kurczaka", "qty": 200 }, { "product": "ryz", "qty": 70 }, { "product": "brokul", "qty": 200 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 2, "note": "chicken seasoning" }],
+      "steps": [{ "text": "Put the rice bag in boiling salted water.", "timerSec": 900 }, { "text": "Cut the chicken into strips, season." }, { "text": "Fry chicken on oil over medium-high heat, turning.", "timerSec": 480 }, { "text": "Steam or microwave the broccoli.", "timerSec": 300 }, { "text": "Plate it all up." }]
+    },
+    {
+      "id": "turkey-bolognese", "name": "Turkey bolognese", "slots": ["dinner"], "effort": 2, "minutes": 25,
+      "ingredients": [{ "product": "indyk-mielony", "qty": 200 }, { "product": "makaron", "qty": 80 }, { "product": "passata", "qty": 200 }, { "product": "cebula", "qty": 1 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 2 }],
+      "steps": [{ "text": "Start the pasta in boiling salted water.", "timerSec": 600 }, { "text": "Dice the onion, fry on oil until soft.", "timerSec": 180 }, { "text": "Add the mince, break it up and brown.", "timerSec": 360 }, { "text": "Pour in passata, season, simmer.", "timerSec": 480 }, { "text": "Drain the pasta and mix with the sauce." }]
+    },
+    {
+      "id": "chicken-wraps", "name": "Chicken & pepper wraps", "slots": ["dinner"], "effort": 2, "minutes": 20,
+      "ingredients": [{ "product": "piers-kurczaka", "qty": 150 }, { "product": "tortilla", "qty": 2 }, { "product": "papryka", "qty": 1 }, { "product": "skyr", "qty": 50, "note": "as garlic sauce with a pinch of salt" }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 2 }],
+      "steps": [{ "text": "Slice chicken and pepper into strips, season." }, { "text": "Fry chicken on oil.", "timerSec": 360 }, { "text": "Add the pepper and fry a bit more.", "timerSec": 180 }, { "text": "Warm the tortillas, spread skyr, fill and roll." }]
+    },
+    {
+      "id": "tuna-pasta", "name": "Tuna tomato pasta", "slots": ["dinner"], "effort": 1, "minutes": 15,
+      "ingredients": [{ "product": "makaron", "qty": 80 }, { "product": "tunczyk", "qty": 1 }, { "product": "passata", "qty": 200 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Cook the pasta in salted water.", "timerSec": 600 }, { "text": "Warm passata in a pan, season." }, { "text": "Add drained tuna, heat through.", "timerSec": 120 }, { "text": "Drain the pasta and mix." }]
+    },
+    {
+      "id": "cod-potatoes", "name": "Baked cod, potatoes & veg", "slots": ["dinner"], "effort": 2, "minutes": 35,
+      "ingredients": [{ "product": "dorsz", "qty": 250 }, { "product": "ziemniaki", "qty": 300 }, { "product": "warzywa-patelnia", "qty": 200 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 2 }],
+      "steps": [{ "text": "Heat the oven to 200°C. Cut potatoes into wedges, toss with oil and salt." }, { "text": "Bake the potatoes.", "timerSec": 900 }, { "text": "Add the cod (from frozen is fine) and veg to the tray, season.", "timerSec": 1080 }, { "text": "Check the fish flakes, then serve." }]
+    },
+    {
+      "id": "bulgur-chicken-veg", "name": "Bulgur with chicken & stir-fry veg", "slots": ["dinner"], "effort": 2, "minutes": 20,
+      "ingredients": [{ "product": "piers-kurczaka", "qty": 180 }, { "product": "bulgur", "qty": 70 }, { "product": "warzywa-patelnia", "qty": 250 }, { "product": "oliwa", "qty": 5 }, { "product": "sos-sojowy", "qty": 15 }],
+      "steps": [{ "text": "Cook bulgur in salted water.", "timerSec": 720 }, { "text": "Dice chicken, fry on oil.", "timerSec": 360 }, { "text": "Add frozen veg, fry.", "timerSec": 300 }, { "text": "Add soy sauce and bulgur, toss." }]
+    },
+    {
+      "id": "lentil-chicken-curry", "name": "Lentil & chicken curry", "slots": ["dinner"], "effort": 2, "minutes": 30,
+      "ingredients": [{ "product": "soczewica", "qty": 60 }, { "product": "piers-kurczaka", "qty": 120 }, { "product": "passata", "qty": 200 }, { "product": "ryz", "qty": 50 }, { "product": "cebula", "qty": 1 }, { "product": "curry", "qty": 3 }, { "product": "oliwa", "qty": 5 }],
+      "steps": [{ "text": "Start the rice.", "timerSec": 900 }, { "text": "Fry diced onion and chicken with curry powder.", "timerSec": 300 }, { "text": "Add rinsed lentils, passata and 150 ml water, simmer.", "timerSec": 900 }, { "text": "Serve over rice." }]
+    },
+    {
+      "id": "turkey-stirfry", "name": "Turkey soy stir-fry with rice", "slots": ["dinner"], "effort": 2, "minutes": 20,
+      "ingredients": [{ "product": "filet-indyka", "qty": 200 }, { "product": "ryz", "qty": 70 }, { "product": "warzywa-patelnia", "qty": 250 }, { "product": "sos-sojowy", "qty": 20 }, { "product": "oliwa", "qty": 5 }],
+      "steps": [{ "text": "Start the rice.", "timerSec": 900 }, { "text": "Slice turkey thin, fry hot on oil.", "timerSec": 300 }, { "text": "Add frozen veg, fry.", "timerSec": 300 }, { "text": "Add soy sauce, toss, serve over rice." }]
+    },
+    {
+      "id": "turkey-chili", "name": "Turkey chili con carne", "slots": ["dinner"], "effort": 2, "minutes": 30,
+      "ingredients": [{ "product": "indyk-mielony", "qty": 180 }, { "product": "fasola-czerwona", "qty": 120 }, { "product": "passata", "qty": 200 }, { "product": "ryz", "qty": 50 }, { "product": "cebula", "qty": 1 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 3, "note": "chili, cumin, paprika" }],
+      "steps": [{ "text": "Start the rice.", "timerSec": 900 }, { "text": "Fry diced onion and mince with spices.", "timerSec": 420 }, { "text": "Add passata and drained beans, simmer.", "timerSec": 600 }, { "text": "Serve over rice." }]
+    },
+    {
+      "id": "chicken-salad", "name": "Grilled chicken salad with mozzarella", "slots": ["dinner", "supper"], "effort": 2, "minutes": 20,
+      "ingredients": [{ "product": "piers-kurczaka", "qty": 180 }, { "product": "szpinak", "qty": 50 }, { "product": "pomidorki", "qty": 150 }, { "product": "mozzarella-light", "qty": 60 }, { "product": "oliwa", "qty": 10 }, { "product": "przyprawy", "qty": 2 }],
+      "steps": [{ "text": "Season the chicken, fry or grill on 5 ml oil, first side.", "timerSec": 300 }, { "text": "Flip and cook the second side.", "timerSec": 300 }, { "text": "Rest the chicken, then slice.", "timerSec": 120 }, { "text": "Toss spinach, tomatoes and mozzarella with the remaining oil, top with chicken." }]
+    },
+    {
+      "id": "egg-twarog-paste", "name": "Egg & twaróg paste on bread", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 12,
+      "ingredients": [{ "product": "twarog", "qty": 150 }, { "product": "jajka", "qty": 2 }, { "product": "chleb", "qty": 60 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Hard-boil the eggs.", "timerSec": 540 }, { "text": "Cool them in cold water.", "timerSec": 60 }, { "text": "Peel, chop and mash with twaróg, salt and pepper." }, { "text": "Spread on bread." }]
+    },
+    {
+      "id": "tuna-egg-salad", "name": "Tuna & egg salad", "slots": ["supper"], "effort": 1, "minutes": 12,
+      "ingredients": [{ "product": "tunczyk", "qty": 1 }, { "product": "jajka", "qty": 2 }, { "product": "pomidorki", "qty": 150 }, { "product": "szpinak", "qty": 50 }, { "product": "oliwa", "qty": 5 }],
+      "steps": [{ "text": "Hard-boil the eggs.", "timerSec": 540 }, { "text": "Cool, peel and quarter." }, { "text": "Toss spinach, tomatoes, drained tuna and eggs with oil and salt." }]
+    },
+    {
+      "id": "serek-skyr-berries", "name": "Serek & skyr with berries", "slots": ["supper"], "effort": 1, "minutes": 3,
+      "ingredients": [{ "product": "serek-wiejski", "qty": 200 }, { "product": "skyr", "qty": 150 }, { "product": "owoce-mrozone", "qty": 100 }],
+      "steps": [{ "text": "Mix serek and skyr in a bowl." }, { "text": "Top with berries (microwave 1 min if frozen).", "timerSec": 60 }]
+    },
+    {
+      "id": "veg-omelette", "name": "Veggie omelette", "slots": ["supper"], "effort": 2, "minutes": 15,
+      "ingredients": [{ "product": "jajka", "qty": 4 }, { "product": "warzywa-patelnia", "qty": 150 }, { "product": "mozzarella-light", "qty": 30 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Fry the frozen veg on oil.", "timerSec": 300 }, { "text": "Pour over beaten, seasoned eggs, cover, cook on low.", "timerSec": 240 }, { "text": "Add mozzarella, fold, serve." }]
+    },
+    {
+      "id": "turkey-serek-wrap", "name": "Turkey ham & serek wrap", "slots": ["supper"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "tortilla", "qty": 1 }, { "product": "szynka-indyk", "qty": 100 }, { "product": "serek-wiejski", "qty": 100 }, { "product": "papryka", "qty": 0.5 }],
+      "steps": [{ "text": "Spread drained serek on the tortilla." }, { "text": "Add ham and pepper strips, roll tight, cut in half." }]
+    },
+    {
+      "id": "salmon-bread", "name": "Smoked salmon & skyr on rye", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "losos-wedzony", "qty": 100 }, { "product": "skyr", "qty": 100 }, { "product": "chleb", "qty": 60 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Season skyr with salt, pepper (and dill if you have it)." }, { "text": "Spread on bread, top with salmon." }]
+    },
+    {
+      "id": "shakshuka", "name": "Quick shakshuka", "slots": ["supper"], "effort": 2, "minutes": 20,
+      "ingredients": [{ "product": "jajka", "qty": 3 }, { "product": "passata", "qty": 200 }, { "product": "papryka", "qty": 1 }, { "product": "mozzarella-light", "qty": 30 }, { "product": "chleb", "qty": 60 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 2 }],
+      "steps": [{ "text": "Fry diced pepper on oil.", "timerSec": 240 }, { "text": "Add passata and spices, simmer.", "timerSec": 300 }, { "text": "Make 3 hollows, crack in the eggs, cover.", "timerSec": 360 }, { "text": "Add mozzarella, serve with bread." }]
+    },
+    {
+      "id": "sweet-twarog", "name": "Sweet cinnamon twaróg with banana", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 3,
+      "ingredients": [{ "product": "twarog", "qty": 200 }, { "product": "skyr", "qty": 100 }, { "product": "banan", "qty": 1 }, { "product": "miod", "qty": 10 }, { "product": "cynamon", "qty": 1 }],
+      "steps": [{ "text": "Mash twaróg with skyr, honey and cinnamon." }, { "text": "Top with sliced banana." }]
+    },
+    {
+      "id": "chickpea-egg-salad", "name": "Chickpea & egg salad", "slots": ["supper"], "effort": 1, "minutes": 12,
+      "ingredients": [{ "product": "ciecierzyca", "qty": 120 }, { "product": "jajka", "qty": 3 }, { "product": "pomidorki", "qty": 150 }, { "product": "mozzarella-light", "qty": 30 }, { "product": "oliwa", "qty": 5 }],
+      "steps": [{ "text": "Hard-boil the eggs.", "timerSec": 540 }, { "text": "Cool, peel and quarter." }, { "text": "Toss drained chickpeas, tomatoes, mozzarella and eggs with oil and salt." }]
+    },
+    {
+      "id": "cold-chicken-salad", "name": "Cold chicken & tomato salad", "slots": ["supper"], "effort": 2, "minutes": 15,
+      "ingredients": [{ "product": "piers-kurczaka", "qty": 150 }, { "product": "pomidorki", "qty": 150 }, { "product": "szpinak", "qty": 50 }, { "product": "skyr", "qty": 50, "note": "dressing" }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Fry seasoned chicken (or use leftovers from dinner).", "timerSec": 480 }, { "text": "Let it cool a bit and slice.", "timerSec": 120 }, { "text": "Toss with spinach, tomatoes and a skyr-salt-pepper dressing." }]
+    }
+  ]
+}
