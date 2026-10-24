@@ -20,13 +20,11 @@
     "passata": { "name": "Passata pomidorowa 500 g", "searchTerm": "passata pomidorowa", "unit": "g", "packSize": 500, "aisle": "Konserwy i słoiki", "per": { "kcal": 30, "protein": 1.4, "carbs": 6, "fat": 0.2 } },
     "maslo-orzechowe": { "name": "Masło orzechowe 350 g", "searchTerm": "masło orzechowe", "unit": "g", "packSize": 350, "aisle": "Konserwy i słoiki", "per": { "kcal": 600, "protein": 25, "carbs": 15, "fat": 50 } },
     "miod": { "name": "Miód 400 g", "searchTerm": "miód", "unit": "g", "packSize": 400, "aisle": "Konserwy i słoiki", "per": { "kcal": 330, "protein": 0.3, "carbs": 82, "fat": 0 } },
-    "odzywka": { "name": "Odżywka białkowa (whey)", "searchTerm": "odżywka białkowa", "unit": "g", "packSize": 700, "aisle": "Konserwy i słoiki", "per": { "kcal": 380, "protein": 73, "carbs": 10, "fat": 6 } },
     "platki-owsiane": { "name": "Płatki owsiane 500 g", "searchTerm": "płatki owsiane", "unit": "g", "packSize": 500, "aisle": "Pieczywo i zboża", "per": { "kcal": 370, "protein": 13, "carbs": 60, "fat": 7 } },
     "ryz": { "name": "Ryż w woreczkach 4×100 g", "searchTerm": "ryż w woreczkach", "unit": "g", "packSize": 400, "aisle": "Pieczywo i zboża", "per": { "kcal": 350, "protein": 7.5, "carbs": 78, "fat": 0.6 } },
     "bulgur": { "name": "Kasza bulgur 400 g", "searchTerm": "kasza bulgur", "unit": "g", "packSize": 400, "aisle": "Pieczywo i zboża", "per": { "kcal": 340, "protein": 12, "carbs": 70, "fat": 1.5 } },
     "makaron": { "name": "Makaron pełnoziarnisty 500 g", "searchTerm": "makaron pełnoziarnisty", "unit": "g", "packSize": 500, "aisle": "Pieczywo i zboża", "per": { "kcal": 350, "protein": 13, "carbs": 65, "fat": 2.5 } },
     "tortilla": { "name": "Tortille pszenne 6 szt", "searchTerm": "tortilla pszenna", "unit": "szt", "packSize": 6, "aisle": "Pieczywo i zboża", "per": { "kcal": 120, "protein": 3.2, "carbs": 20, "fat": 3 } },
-    "chleb": { "name": "Chleb żytni razowy 500 g", "searchTerm": "chleb żytni razowy", "unit": "g", "packSize": 500, "aisle": "Pieczywo i zboża", "per": { "kcal": 220, "protein": 6, "carbs": 42, "fat": 1.5 } },
     "ziemniaki": { "name": "Ziemniaki 1 kg", "searchTerm": "ziemniaki", "unit": "g", "packSize": 1000, "aisle": "Owoce i warzywa", "per": { "kcal": 77, "protein": 2, "carbs": 17, "fat": 0.1 } },
     "banan": { "name": "Banan", "searchTerm": "banany", "unit": "szt", "packSize": 1, "aisle": "Owoce i warzywa", "per": { "kcal": 105, "protein": 1.3, "carbs": 27, "fat": 0.4 } },
     "pomidorki": { "name": "Pomidorki koktajlowe 250 g", "searchTerm": "pomidory koktajlowe", "unit": "g", "packSize": 250, "aisle": "Owoce i warzywa", "per": { "kcal": 18, "protein": 0.9, "carbs": 3.9, "fat": 0.2 } },
@@ -49,29 +47,29 @@
       "steps": [{ "text": "Przełóż oba kubki skyru do miski." }, { "text": "Jeśli chcesz miękkie owoce, podgrzej je 1 minutę w mikrofalówce.", "timerSec": 60 }, { "text": "Posyp owocami i płatkami, polej miodem." }]
     },
     {
-      "id": "twarog-bread", "name": "Pasta twarogowa na chlebie żytnim", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 5,
-      "ingredients": [{ "product": "twarog", "qty": 200 }, { "product": "skyr", "qty": 50 }, { "product": "pomidorki", "qty": 100 }, { "product": "chleb", "qty": 80, "note": "2 kromki" }, { "product": "przyprawy", "qty": 1 }],
-      "steps": [{ "text": "Rozgnieć twaróg widelcem ze skyrem, solą i pieprzem." }, { "text": "Posmaruj chleb, na wierzch połówki pomidorków." }]
+      "id": "twarog-bread", "name": "Pasta twarogowa ze skyrem i pomidorkami", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "twarog", "qty": 200 }, { "product": "skyr", "qty": 50 }, { "product": "pomidorki", "qty": 100 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Rozgnieć twaróg widelcem ze skyrem, solą i pieprzem." }, { "text": "Przełóż do miski, na wierzch połówki pomidorków." }]
     },
     {
       "id": "scrambled-ham", "name": "Jajecznica z 4 jaj z szynką z indyka", "slots": ["breakfast"], "effort": 1, "minutes": 10,
-      "ingredients": [{ "product": "jajka", "qty": 4 }, { "product": "szynka-indyk", "qty": 50 }, { "product": "chleb", "qty": 60 }, { "product": "pomidorki", "qty": 100 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
-      "steps": [{ "text": "Pokrój szynkę w kostkę. Roztrzep jajka z solą i pieprzem." }, { "text": "Rozgrzej oliwę na patelni na średnim ogniu, smaż szynkę 1 minutę.", "timerSec": 60 }, { "text": "Wlej jajka i mieszaj delikatnie, aż się zetną.", "timerSec": 180 }, { "text": "Podawaj z chlebem i pomidorkami." }]
+      "ingredients": [{ "product": "jajka", "qty": 4 }, { "product": "szynka-indyk", "qty": 50 }, { "product": "pomidorki", "qty": 100 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Pokrój szynkę w kostkę. Roztrzep jajka z solą i pieprzem." }, { "text": "Rozgrzej oliwę na patelni na średnim ogniu, smaż szynkę 1 minutę.", "timerSec": 60 }, { "text": "Wlej jajka i mieszaj delikatnie, aż się zetną.", "timerSec": 180 }, { "text": "Podawaj z pomidorkami." }]
     },
     {
-      "id": "protein-oats", "name": "Owsianka proteinowa z bananem", "slots": ["breakfast"], "effort": 1, "minutes": 7,
-      "ingredients": [{ "product": "platki-owsiane", "qty": 60 }, { "product": "mleko", "qty": 250 }, { "product": "odzywka", "qty": 30, "note": "1 miarka" }, { "product": "banan", "qty": 1 }],
-      "steps": [{ "text": "Wsyp płatki do dużej miski i zalej mlekiem." }, { "text": "Podgrzej w mikrofalówce na pełnej mocy, w połowie zamieszaj.", "timerSec": 150 }, { "text": "Odstaw na minutę, potem wmieszaj odżywkę.", "timerSec": 60 }, { "text": "Pokrój banana na wierzch." }]
+      "id": "protein-oats", "name": "Owsianka ze skyrem i bananem", "slots": ["breakfast"], "effort": 1, "minutes": 7,
+      "ingredients": [{ "product": "platki-owsiane", "qty": 60 }, { "product": "mleko", "qty": 250 }, { "product": "skyr", "qty": 150 }, { "product": "banan", "qty": 1 }],
+      "steps": [{ "text": "Wsyp płatki do dużej miski i zalej mlekiem." }, { "text": "Podgrzej w mikrofalówce na pełnej mocy, w połowie zamieszaj.", "timerSec": 150 }, { "text": "Odstaw na minutę, potem wmieszaj skyr.", "timerSec": 60 }, { "text": "Pokrój banana na wierzch." }]
     },
     {
       "id": "spinach-omelette", "name": "Omlet ze szpinakiem i mozzarellą", "slots": ["breakfast", "supper"], "effort": 2, "minutes": 15,
-      "ingredients": [{ "product": "jajka", "qty": 3 }, { "product": "mozzarella-light", "qty": 60 }, { "product": "szpinak", "qty": 50 }, { "product": "chleb", "qty": 60 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
-      "steps": [{ "text": "Roztrzep jajka z solą i pieprzem. Porwij mozzarellę." }, { "text": "Rozgrzej oliwę, podsmaż szpinak, aż zwiędnie.", "timerSec": 60 }, { "text": "Wlej jajka, przykryj i smaż na małym ogniu.", "timerSec": 180 }, { "text": "Dodaj mozzarellę, złóż na pół i smaż, aż się rozpuści.", "timerSec": 60 }, { "text": "Podawaj z chlebem." }]
+      "ingredients": [{ "product": "jajka", "qty": 3 }, { "product": "mozzarella-light", "qty": 60 }, { "product": "szpinak", "qty": 50 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Roztrzep jajka z solą i pieprzem. Porwij mozzarellę." }, { "text": "Rozgrzej oliwę, podsmaż szpinak, aż zwiędnie.", "timerSec": 60 }, { "text": "Wlej jajka, przykryj i smaż na małym ogniu.", "timerSec": 180 }, { "text": "Dodaj mozzarellę, złóż na pół i smaż, aż się rozpuści.", "timerSec": 60 }]
     },
     {
-      "id": "serek-tomatoes", "name": "Serek wiejski z pomidorkami i chlebem", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 3,
-      "ingredients": [{ "product": "serek-wiejski", "qty": 400 }, { "product": "pomidorki", "qty": 150 }, { "product": "chleb", "qty": 60 }, { "product": "przyprawy", "qty": 1 }],
-      "steps": [{ "text": "Przełóż oba serki do miski, dopraw pieprzem." }, { "text": "Dodaj przekrojone pomidorki. Jedz z chlebem." }]
+      "id": "serek-tomatoes", "name": "Serek wiejski z pomidorkami", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 3,
+      "ingredients": [{ "product": "serek-wiejski", "qty": 400 }, { "product": "pomidorki", "qty": 150 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Przełóż oba serki do miski, dopraw pieprzem." }, { "text": "Dodaj przekrojone pomidorki." }]
     },
     {
       "id": "pudding-parfait", "name": "Pucharek z puddingu proteinowego i skyru", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 3,
@@ -89,9 +87,9 @@
       "steps": [{ "text": "Zmiksuj lub rozgnieć twaróg, jajka, płatki i cynamon na gęste ciasto." }, { "text": "Odstaw, żeby płatki napęczniały.", "timerSec": 300 }, { "text": "Smaż małe placki na lekko natłuszczonej patelni, pierwsza strona.", "timerSec": 150 }, { "text": "Przewróć i smaż drugą stronę.", "timerSec": 120 }, { "text": "Podgrzej owoce w mikrofalówce i polej placki.", "timerSec": 60 }]
     },
     {
-      "id": "tuna-sandwich", "name": "Kanapki z pastą z tuńczyka i skyru", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 5,
-      "ingredients": [{ "product": "tunczyk", "qty": 1 }, { "product": "skyr", "qty": 50 }, { "product": "chleb", "qty": 80 }, { "product": "pomidorki", "qty": 100 }, { "product": "przyprawy", "qty": 1 }],
-      "steps": [{ "text": "Odsącz tuńczyka, wymieszaj ze skyrem, solą i pieprzem." }, { "text": "Posmaruj chleb, na wierzch plasterki pomidorków." }]
+      "id": "tuna-sandwich", "name": "Pasta z tuńczyka i skyru z pomidorkami", "slots": ["breakfast", "supper"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "tunczyk", "qty": 1 }, { "product": "skyr", "qty": 50 }, { "product": "pomidorki", "qty": 100 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Odsącz tuńczyka, wymieszaj ze skyrem, solą i pieprzem." }, { "text": "Przełóż do miski, dodaj pokrojone pomidorki." }]
     },
     {
       "id": "chicken-rice-broccoli", "name": "Kurczak z ryżem i brokułem", "slots": ["dinner"], "effort": 2, "minutes": 25,
@@ -144,9 +142,9 @@
       "steps": [{ "text": "Dopraw kurczaka, usmaż lub zgrilluj na 5 ml oliwy, pierwsza strona.", "timerSec": 300 }, { "text": "Przewróć i smaż drugą stronę.", "timerSec": 300 }, { "text": "Odstaw kurczaka, potem pokrój.", "timerSec": 120 }, { "text": "Wymieszaj szpinak, pomidorki i mozzarellę z resztą oliwy, na wierzch kurczak." }]
     },
     {
-      "id": "egg-twarog-paste", "name": "Pasta jajeczno-twarogowa na chlebie", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 12,
-      "ingredients": [{ "product": "twarog", "qty": 150 }, { "product": "jajka", "qty": 2 }, { "product": "chleb", "qty": 60 }, { "product": "przyprawy", "qty": 1 }],
-      "steps": [{ "text": "Ugotuj jajka na twardo.", "timerSec": 540 }, { "text": "Przestudź je w zimnej wodzie.", "timerSec": 60 }, { "text": "Obierz, posiekaj i rozgnieć z twarogiem, solą i pieprzem." }, { "text": "Posmaruj chleb." }]
+      "id": "egg-twarog-paste", "name": "Pasta jajeczno-twarogowa", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 12,
+      "ingredients": [{ "product": "twarog", "qty": 150 }, { "product": "jajka", "qty": 2 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Ugotuj jajka na twardo.", "timerSec": 540 }, { "text": "Przestudź je w zimnej wodzie.", "timerSec": 60 }, { "text": "Obierz, posiekaj i rozgnieć z twarogiem, solą i pieprzem." }]
     },
     {
       "id": "tuna-egg-salad", "name": "Sałatka z tuńczykiem i jajkiem", "slots": ["supper"], "effort": 1, "minutes": 12,
@@ -169,14 +167,14 @@
       "steps": [{ "text": "Posmaruj tortillę odsączonym serkiem." }, { "text": "Dodaj szynkę i paski papryki, zwiń ciasno, przekrój na pół." }]
     },
     {
-      "id": "salmon-bread", "name": "Łosoś wędzony ze skyrem na chlebie żytnim", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 5,
-      "ingredients": [{ "product": "losos-wedzony", "qty": 100 }, { "product": "skyr", "qty": 100 }, { "product": "chleb", "qty": 60 }, { "product": "przyprawy", "qty": 1 }],
-      "steps": [{ "text": "Dopraw skyr solą i pieprzem (i koperkiem, jeśli masz)." }, { "text": "Posmaruj chleb, na wierzch łosoś." }]
+      "id": "salmon-bread", "name": "Łosoś wędzony ze skyrem", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 5,
+      "ingredients": [{ "product": "losos-wedzony", "qty": 100 }, { "product": "skyr", "qty": 100 }, { "product": "przyprawy", "qty": 1 }],
+      "steps": [{ "text": "Dopraw skyr solą i pieprzem (i koperkiem, jeśli masz)." }, { "text": "Przełóż skyr na talerz, na wierzch łosoś." }]
     },
     {
       "id": "shakshuka", "name": "Szybka szakszuka", "slots": ["supper"], "effort": 2, "minutes": 20,
-      "ingredients": [{ "product": "jajka", "qty": 3 }, { "product": "passata", "qty": 200 }, { "product": "papryka", "qty": 1 }, { "product": "mozzarella-light", "qty": 30 }, { "product": "chleb", "qty": 60 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 2 }],
-      "steps": [{ "text": "Podsmaż pokrojoną paprykę na oliwie.", "timerSec": 240 }, { "text": "Dodaj passatę i przyprawy, duś.", "timerSec": 300 }, { "text": "Zrób 3 dołki, wbij jajka, przykryj.", "timerSec": 360 }, { "text": "Dodaj mozzarellę, podawaj z chlebem." }]
+      "ingredients": [{ "product": "jajka", "qty": 3 }, { "product": "passata", "qty": 200 }, { "product": "papryka", "qty": 1 }, { "product": "mozzarella-light", "qty": 30 }, { "product": "oliwa", "qty": 5 }, { "product": "przyprawy", "qty": 2 }],
+      "steps": [{ "text": "Podsmaż pokrojoną paprykę na oliwie.", "timerSec": 240 }, { "text": "Dodaj passatę i przyprawy, duś.", "timerSec": 300 }, { "text": "Zrób 3 dołki, wbij jajka, przykryj.", "timerSec": 360 }, { "text": "Dodaj mozzarellę i podawaj." }]
     },
     {
       "id": "sweet-twarog", "name": "Słodki twaróg z cynamonem i bananem", "slots": ["supper", "breakfast"], "effort": 1, "minutes": 3,

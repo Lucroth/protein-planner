@@ -51,8 +51,8 @@ describe("shoppingList", () => {
 
   it("leaves staples and ticked items out of the cart", () => {
     const items = shoppingList([{ breakfast: "scrambled-ham" }], byId, products);
-    const cart = cartJson(items, new Set(["chleb"]));
-    expect(cart.map((c) => c.id).sort()).toEqual(["jajka", "pomidorki", "szynka-indyk"]);
+    const cart = cartJson(items, new Set(["pomidorki"]));
+    expect(cart.map((c) => c.id).sort()).toEqual(["jajka", "szynka-indyk"]);
   });
 });
 
