@@ -19,7 +19,7 @@ export async function shopPage(el: HTMLElement, ctx: Ctx, params: URLSearchParam
 
   const row = (i: ShopItem) => html`<li class="${checked.has(i.id) ? "done" : ""}">
     <label><input type="checkbox" data-id="${i.id}" ${checked.has(i.id) ? "checked" : ""} />
-      <span><strong>${packs(i.packs, i.product)}</strong> <span class="muted small">need ${Math.round(i.qty * 10) / 10} ${i.product.unit === "szt" ? "pcs" : i.product.unit}</span></span>
+      <span><strong>${packs(i.packs, i.product)}</strong> <span class="muted small">potrzeba ${Math.round(i.qty * 10) / 10} ${i.product.unit}</span></span>
     </label>
     <a href="${uberEatsSearch(i.product.searchTerm)}" target="_blank" rel="noopener" class="small">Uber Eats</a>
   </li>`;
@@ -28,22 +28,22 @@ export async function shopPage(el: HTMLElement, ctx: Ctx, params: URLSearchParam
   const staples = items.filter((i) => i.product.staple);
 
   el.innerHTML = html`
-    <div class="toolbar"><h1>Shopping list</h1></div>
+    <div class="toolbar"><h1>Lista zakupów</h1></div>
     <form class="filters" id="range">
-      <label>From <input type="date" name="from" value="${from}" /></label>
-      <label>To <input type="date" name="to" value="${to}" /></label>
-      <span class="muted small">${planned} meals planned</span>
+      <label>Od <input type="date" name="from" value="${from}" /></label>
+      <label>Do <input type="date" name="to" value="${to}" /></label>
+      <span class="muted small">zaplanowane posiłki: ${planned}</span>
     </form>
     ${items.length
       ? html`
         <div class="buttons">
-          <button type="button" id="export">Export cart JSON</button>
-          <button type="button" class="ghost" id="clear">Untick all</button>
+          <button type="button" id="export">Eksportuj koszyk (JSON)</button>
+          <button type="button" class="ghost" id="clear">Odznacz wszystko</button>
         </div>
-        <p class="muted small">Tick what you already have; the export skips ticked items and pantry staples. Run <code>npm run cart -- &lt;file&gt;</code> in <code>scripts/</code> to fill the Uber Eats cart.</p>
+        <p class="muted small">Zaznacz, co już masz; eksport pomija zaznaczone pozycje i podstawowe produkty ze spiżarni. Uruchom <code>npm run cart -- &lt;plik&gt;</code> w <code>scripts/</code>, żeby wypełnić koszyk w Uber Eats.</p>
         ${aisles.map((a) => html`<h2>${a}</h2><ul class="shop">${items.filter((i) => !i.product.staple && i.product.aisle === a).map(row)}</ul>`)}
-        ${staples.length ? html`<details><summary>Pantry staples (check you have them)</summary><ul class="shop">${staples.map(row)}</ul></details>` : ""}`
-      : html`<p class="muted">Nothing planned in this range. <a href="#/week/${mondayOf(from)}">Plan the week</a>.</p>`}`.value;
+        ${staples.length ? html`<details><summary>Spiżarnia (sprawdź, czy masz)</summary><ul class="shop">${staples.map(row)}</ul></details>` : ""}`
+      : html`<p class="muted">Nic nie zaplanowano w tym okresie. <a href="#/week/${mondayOf(from)}">Zaplanuj tydzień</a>.</p>`}`.value;
 
   el.querySelector<HTMLFormElement>("#range")!.addEventListener("change", (e) => {
     const f = new FormData(e.currentTarget as HTMLFormElement);

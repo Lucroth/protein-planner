@@ -34,43 +34,43 @@ export function addPage(el: HTMLElement, ctx: Ctx, sourceId: string | null, onSa
       .map(([id, p]) => html`<option value="${id}">${p.name}</option>`);
 
   el.innerHTML = html`
-    <p class="back"><a href="${src ? `#/recipe/${src.id}` : "#/recipes"}">‹ Back</a></p>
-    <h1>${src?.custom ? "Edit recipe" : src ? `Copy of ${src.name}` : "New recipe"}</h1>
+    <p class="back"><a href="${src ? `#/recipe/${src.id}` : "#/recipes"}">‹ Wstecz</a></p>
+    <h1>${src?.custom ? "Edytuj przepis" : src ? `Kopia: ${src.name}` : "Nowy przepis"}</h1>
     <form id="recipe" class="form">
-      <label>Name <input name="name" required value="${src ? (src.custom ? src.name : `${src.name} (mine)`) : ""}" /></label>
-      <fieldset><legend>Meals</legend>
+      <label>Nazwa <input name="name" required value="${src ? (src.custom ? src.name : `${src.name} (mój)`) : ""}" /></label>
+      <fieldset><legend>Posiłki</legend>
         ${SLOTS.map((s) => html`<label class="inline"><input type="checkbox" name="slots" value="${s}" ${src?.slots.includes(s) ? "checked" : ""} /> ${SLOT_LABEL[s]}</label>`)}
       </fieldset>
       <div class="row">
-        <label>Effort <select name="effort">${[1, 2, 3].map((n) => html`<option value="${n}" ${src?.effort === n ? "selected" : ""}>${["", "Easy", "Medium", "Involved"][n]}</option>`)}</select></label>
-        <label>Minutes <input name="minutes" type="number" min="1" required value="${src?.minutes ?? 10}" /></label>
+        <label>Trudność <select name="effort">${[1, 2, 3].map((n) => html`<option value="${n}" ${src?.effort === n ? "selected" : ""}>${["", "Łatwy", "Średni", "Pracochłonny"][n]}</option>`)}</select></label>
+        <label>Minuty <input name="minutes" type="number" min="1" required value="${src?.minutes ?? 10}" /></label>
       </div>
-      <fieldset><legend>Ingredients (one portion)</legend>
+      <fieldset><legend>Składniki (jedna porcja)</legend>
         <div id="rows"></div>
-        <button type="button" class="ghost" id="add-row">+ Ingredient</button>
+        <button type="button" class="ghost" id="add-row">+ Składnik</button>
         <p id="macros" class="muted"></p>
       </fieldset>
-      <label>Steps <span class="muted small">one per line, add a timer with [5 min] or [90 s] at the end</span>
+      <label>Kroki <span class="muted small">jeden w linii, minutnik dodasz na końcu: [5 min] albo [90 s]</span>
         <textarea name="steps" rows="8" required>${src ? formatSteps(src.steps) : ""}</textarea>
       </label>
       <p id="error" class="error"></p>
-      <button type="submit" class="big">Save recipe</button>
+      <button type="submit" class="big">Zapisz przepis</button>
     </form>
-    <details class="card"><summary>Product missing? Add it</summary>
+    <details class="card"><summary>Brakuje produktu? Dodaj go</summary>
       <form id="product" class="form">
-        <label>Name <input name="name" required placeholder="Skyr waniliowy 150 g" /></label>
-        <label>Uber Eats search term <input name="searchTerm" required placeholder="skyr waniliowy" /></label>
+        <label>Nazwa <input name="name" required placeholder="Skyr waniliowy 150 g" /></label>
+        <label>Fraza do wyszukania w Uber Eats <input name="searchTerm" required placeholder="skyr waniliowy" /></label>
         <div class="row">
-          <label>Unit <select name="unit"><option value="g">g</option><option value="ml">ml</option><option value="szt">pcs</option></select></label>
-          <label>Pack size <input name="packSize" type="number" min="1" step="any" required /></label>
-          <label>Aisle <input name="aisle" list="aisles" required /></label>
+          <label>Jednostka <select name="unit"><option value="g">g</option><option value="ml">ml</option><option value="szt">szt</option></select></label>
+          <label>Wielkość opakowania <input name="packSize" type="number" min="1" step="any" required /></label>
+          <label>Dział <input name="aisle" list="aisles" required /></label>
         </div>
-        <p class="muted small">Per 100 g / 100 ml, or per piece:</p>
+        <p class="muted small">Na 100 g / 100 ml albo na sztukę:</p>
         <div class="row">
-          ${(["kcal", "protein", "carbs", "fat"] as const).map((k) => html`<label>${k} <input name="${k}" type="number" min="0" step="any" required /></label>`)}
+          ${([["kcal", "kcal"], ["protein", "białko"], ["carbs", "węglowodany"], ["fat", "tłuszcz"]] as const).map(([k, label]) => html`<label>${label} <input name="${k}" type="number" min="0" step="any" required /></label>`)}
         </div>
-        <label class="inline"><input type="checkbox" name="staple" /> Pantry staple (left out of the cart)</label>
-        <button type="submit">Add product</button>
+        <label class="inline"><input type="checkbox" name="staple" /> Produkt ze spiżarni (pomijany w koszyku)</label>
+        <button type="submit">Dodaj produkt</button>
       </form>
       <datalist id="aisles">${[...new Set(Object.values(ctx.products).map((p) => p.aisle))].map((a) => html`<option value="${a}"></option>`)}</datalist>
     </details>`.value;
@@ -79,16 +79,16 @@ export function addPage(el: HTMLElement, ctx: Ctx, sourceId: string | null, onSa
   const macrosEl = el.querySelector("#macros")!;
   const drawMacros = () => {
     const m = macrosOf({ ingredients: rows } as Recipe, ctx.products);
-    macrosEl.textContent = `${g(m.protein)} protein · ${Math.round(m.kcal)} kcal · ${g(m.carbs)} carbs · ${g(m.fat)} fat`;
+    macrosEl.textContent = `${g(m.protein)} białka · ${Math.round(m.kcal)} kcal · ${g(m.carbs)} węglowodanów · ${g(m.fat)} tłuszczu`;
   };
   const drawRows = () => {
     rowsEl.innerHTML = rows
       .map(
         (r, i) => html`<div class="ing-row" data-i="${i}">
-          <select data-f="product" required><option value="">Product…</option>${productOptions()}</select>
+          <select data-f="product" required><option value="">Produkt…</option>${productOptions()}</select>
           <input data-f="qty" type="number" min="0" step="any" required value="${r.qty || ""}" />
           <span class="unit">${ctx.products[r.product]?.unit ?? ""}</span>
-          <button type="button" class="ghost" data-remove aria-label="Remove">✕</button>
+          <button type="button" class="ghost" data-remove aria-label="Usuń">✕</button>
         </div>`.value,
       )
       .join("");
@@ -148,9 +148,9 @@ export function addPage(el: HTMLElement, ctx: Ctx, sourceId: string | null, onSa
     const slots = f.getAll("slots") as Slot[];
     const ingredients = rows.filter((r) => r.product && r.qty > 0);
     const steps = parseSteps(String(f.get("steps")));
-    if (!slots.length) return void (error.textContent = "Pick at least one meal.");
-    if (!ingredients.length) return void (error.textContent = "Add at least one ingredient.");
-    if (!steps.length) return void (error.textContent = "Add at least one step.");
+    if (!slots.length) return void (error.textContent = "Wybierz co najmniej jeden posiłek.");
+    if (!ingredients.length) return void (error.textContent = "Dodaj co najmniej jeden składnik.");
+    if (!steps.length) return void (error.textContent = "Dodaj co najmniej jeden krok.");
     const name = String(f.get("name")).trim();
     const recipe: Recipe = {
       id: src?.custom ? src.id : `c-${slug(name)}-${Date.now().toString(36)}`,

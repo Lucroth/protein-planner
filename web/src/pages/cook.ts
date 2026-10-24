@@ -15,7 +15,7 @@ interface Timer {
 export function cookPage(el: HTMLElement, ctx: Ctx, id: string, portions: number): () => void {
   const r = ctx.byId.get(id);
   if (!r) {
-    el.innerHTML = html`<h1>Recipe not found</h1>`.value;
+    el.innerHTML = html`<h1>Nie ma takiego przepisu</h1>`.value;
     return () => {};
   }
   let step = 0;
@@ -41,7 +41,7 @@ export function cookPage(el: HTMLElement, ctx: Ctx, id: string, portions: number
       <div class="cook">
         <header class="cook-head">
           <a href="#/recipe/${r.id}" class="small">✕ ${r.name}</a>
-          <span class="small muted">Step ${step + 1} / ${r.steps.length}</span>
+          <span class="small muted">Krok ${step + 1} / ${r.steps.length}</span>
         </header>
         <div class="progress"><span style="width:${((step + 1) / r.steps.length) * 100}%"></span></div>
         <div id="others" class="others"></div>
@@ -50,16 +50,16 @@ export function cookPage(el: HTMLElement, ctx: Ctx, id: string, portions: number
           ? html`<div class="timer">
               <span id="time" class="time">${clock(t ? remaining(t) : s.timerSec)}</span>
               <div class="buttons">
-                <button type="button" id="toggle">${t?.endsAt ? "Pause" : t ? "Resume" : "Start timer"}</button>
-                ${t ? html`<button type="button" class="ghost" id="reset">Reset</button>` : ""}
+                <button type="button" id="toggle">${t?.endsAt ? "Pauza" : t ? "Wznów" : "Start minutnika"}</button>
+                ${t ? html`<button type="button" class="ghost" id="reset">Od nowa</button>` : ""}
               </div>
             </div>`
           : ""}
         <nav class="cook-nav">
-          <button type="button" class="ghost big" id="prev" ${step === 0 ? "disabled" : ""}>‹ Back</button>
-          ${last ? html`<a class="button big" href="#/recipe/${r.id}">Done ✓</a>` : html`<button type="button" class="big" id="next">Next ›</button>`}
+          <button type="button" class="ghost big" id="prev" ${step === 0 ? "disabled" : ""}>‹ Wstecz</button>
+          ${last ? html`<a class="button big" href="#/recipe/${r.id}">Gotowe ✓</a>` : html`<button type="button" class="big" id="next">Dalej ›</button>`}
         </nav>
-        <details class="drawer"><summary>Ingredients${portions > 1 ? ` (×${portions})` : ""}</summary>${ingredientList(ctx, r, portions)}</details>
+        <details class="drawer"><summary>Składniki${portions > 1 ? ` (×${portions})` : ""}</summary>${ingredientList(ctx, r, portions)}</details>
       </div>`.value;
 
     el.querySelector("#prev")?.addEventListener("click", () => go(-1));
@@ -96,7 +96,7 @@ export function cookPage(el: HTMLElement, ctx: Ctx, id: string, portions: number
     if (others)
       others.innerHTML = [...timers.values()]
         .filter((o) => o.step !== step)
-        .map((o) => html`<button type="button" class="chip ${remaining(o) === 0 ? "done" : ""}" data-step="${o.step}">Step ${o.step + 1} ⏱ ${clock(remaining(o))}</button>`.value)
+        .map((o) => html`<button type="button" class="chip ${remaining(o) === 0 ? "done" : ""}" data-step="${o.step}">Krok ${o.step + 1} ⏱ ${clock(remaining(o))}</button>`.value)
         .join("");
     others?.querySelectorAll<HTMLButtonElement>("[data-step]").forEach((b) => (b.onclick = () => ((step = Number(b.dataset.step)), draw())));
     for (const o of timers.values())
@@ -136,7 +136,7 @@ export function cookPage(el: HTMLElement, ctx: Ctx, id: string, portions: number
 }
 
 let audio: AudioContext | undefined;
-// Browsers only allow sound after a user gesture, so the context is created on "Start timer".
+// Browsers only allow sound after a user gesture, so the context is created on "Start minutnika".
 const unlockAudio = () => {
   audio ??= new AudioContext();
   void audio.resume();

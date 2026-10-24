@@ -6,15 +6,15 @@ import { SLOTS, type Recipe } from "../model";
 export function recipesPage(el: HTMLElement, ctx: Ctx): void {
   el.innerHTML = html`
     <div class="toolbar">
-      <h1>Recipes</h1>
+      <h1>Przepisy</h1>
       <span class="spacer"></span>
-      <a class="button" href="#/add">+ Add recipe</a>
+      <a class="button" href="#/add">+ Dodaj przepis</a>
     </div>
     <form class="filters" id="filters">
-      <input type="search" name="q" placeholder="Search" />
-      <select name="slot"><option value="">Any meal</option>${SLOTS.map((s) => html`<option value="${s}">${SLOT_LABEL[s]}</option>`)}</select>
-      <select name="effort"><option value="3">Any effort</option><option value="1">Easiest only</option><option value="2">Up to medium</option></select>
-      <select name="minutes"><option value="999">Any time</option><option value="10">≤ 10 min</option><option value="20">≤ 20 min</option></select>
+      <input type="search" name="q" placeholder="Szukaj" />
+      <select name="slot"><option value="">Każdy posiłek</option>${SLOTS.map((s) => html`<option value="${s}">${SLOT_LABEL[s]}</option>`)}</select>
+      <select name="effort"><option value="3">Dowolna trudność</option><option value="1">Tylko najprostsze</option><option value="2">Do średniej</option></select>
+      <select name="minutes"><option value="999">Dowolny czas</option><option value="10">≤ 10 min</option><option value="20">≤ 20 min</option></select>
     </form>
     <ul class="recipes" id="list"></ul>`.value;
 
@@ -36,7 +36,7 @@ export function recipesPage(el: HTMLElement, ctx: Ctx): void {
     );
     list.innerHTML = shown.length
       ? shown.map((r) => recipeRow(ctx, r)).join("")
-      : html`<li class="muted">Nothing matches.</li>`.value;
+      : html`<li class="muted">Brak pasujących przepisów.</li>`.value;
   };
   form.addEventListener("input", draw);
   draw();
@@ -45,8 +45,8 @@ export function recipesPage(el: HTMLElement, ctx: Ctx): void {
 const recipeRow = (ctx: Ctx, r: Recipe) => {
   const m = ctx.macros(r);
   return html`<li><a href="#/recipe/${r.id}" class="recipe-row">
-    <span class="name">${r.name}${r.custom ? html` <span class="tag">mine</span>` : ""}</span>
-    <span class="meta">${g(m.protein)} protein · ${Math.round(m.kcal)} kcal · ${r.minutes} min ${effort(r)}</span>
+    <span class="name">${r.name}${r.custom ? html` <span class="tag">mój</span>` : ""}</span>
+    <span class="meta">${g(m.protein)} białka · ${Math.round(m.kcal)} kcal · ${r.minutes} min ${effort(r)}</span>
     <span class="meta small muted">${r.slots.map((s) => SLOT_LABEL[s]).join(" · ")}</span>
   </a></li>`.value;
 };
@@ -54,37 +54,37 @@ const recipeRow = (ctx: Ctx, r: Recipe) => {
 export function recipePage(el: HTMLElement, ctx: Ctx, id: string, onDeleted: () => void): void {
   const r = ctx.byId.get(id);
   if (!r) {
-    el.innerHTML = html`<h1>Recipe not found</h1><p><a href="#/recipes">All recipes</a></p>`.value;
+    el.innerHTML = html`<h1>Nie ma takiego przepisu</h1><p><a href="#/recipes">Wszystkie przepisy</a></p>`.value;
     return;
   }
   let portions = 1;
   const draw = () => {
     const m = ctx.macros(r);
     el.innerHTML = html`
-      <p class="back"><a href="#/recipes">‹ Recipes</a></p>
+      <p class="back"><a href="#/recipes">‹ Przepisy</a></p>
       <h1>${r.name}</h1>
       <p class="lead">${r.minutes} min ${effort(r)} <span class="muted small">${r.slots.map((s) => SLOT_LABEL[s]).join(" · ")}</span></p>
       <div class="macros">
-        <div><strong>${g(m.protein * portions)}</strong><span>protein</span></div>
+        <div><strong>${g(m.protein * portions)}</strong><span>białko</span></div>
         <div><strong>${Math.round(m.kcal * portions)}</strong><span>kcal</span></div>
-        <div><strong>${g(m.carbs * portions)}</strong><span>carbs</span></div>
-        <div><strong>${g(m.fat * portions)}</strong><span>fat</span></div>
+        <div><strong>${g(m.carbs * portions)}</strong><span>węglowodany</span></div>
+        <div><strong>${g(m.fat * portions)}</strong><span>tłuszcz</span></div>
       </div>
-      <p class="muted small">Macros estimated from typical label values.</p>
+      <p class="muted small">Makro szacowane na podstawie typowych etykiet.</p>
       <div class="buttons">
-        <a class="button big" href="#/cook/${r.id}?x=${portions}">▶ Start cooking</a>
-        <a class="button ghost" href="#/add?id=${r.id}">${r.custom ? "Edit" : "Copy & edit"}</a>
-        ${r.custom ? html`<button type="button" class="ghost danger" id="delete">Delete</button>` : ""}
+        <a class="button big" href="#/cook/${r.id}?x=${portions}">▶ Zacznij gotować</a>
+        <a class="button ghost" href="#/add?id=${r.id}">${r.custom ? "Edytuj" : "Kopiuj i edytuj"}</a>
+        ${r.custom ? html`<button type="button" class="ghost danger" id="delete">Usuń</button>` : ""}
       </div>
-      <h2>Ingredients
+      <h2>Składniki
         <span class="stepper">
-          <button type="button" class="ghost" data-k="-1" aria-label="Fewer portions">−</button>
-          <span>${portions} portion${portions > 1 ? "s" : ""}</span>
-          <button type="button" class="ghost" data-k="1" aria-label="More portions">+</button>
+          <button type="button" class="ghost" data-k="-1" aria-label="Mniej porcji">−</button>
+          <span>${portions} ${portions === 1 ? "porcja" : portions < 5 ? "porcje" : "porcji"}</span>
+          <button type="button" class="ghost" data-k="1" aria-label="Więcej porcji">+</button>
         </span>
       </h2>
       ${ingredientList(ctx, r, portions)}
-      <h2>Steps</h2>
+      <h2>Kroki</h2>
       <ol class="steps">${r.steps.map((s) => html`<li>${s.text}${s.timerSec ? html` <span class="tag">⏱ ${clock(s.timerSec)}</span>` : ""}</li>`)}</ol>`.value;
 
     el.querySelectorAll<HTMLButtonElement>("[data-k]").forEach((b) =>
@@ -94,7 +94,7 @@ export function recipePage(el: HTMLElement, ctx: Ctx, id: string, onDeleted: () 
       }),
     );
     el.querySelector("#delete")?.addEventListener("click", async () => {
-      if (!confirm(`Delete "${r.name}"?`)) return;
+      if (!confirm(`Usunąć "${r.name}"?`)) return;
       await ctx.store.deleteRecipe(r.id);
       await ctx.reload();
       onDeleted();

@@ -1,6 +1,6 @@
 {
-  "name": "Protein Planner",
-  "short_name": "Protein",
+  "name": "Planer białkowy",
+  "short_name": "Białko",
   "start_url": "./#/week",
   "scope": "./",
   "display": "standalone",

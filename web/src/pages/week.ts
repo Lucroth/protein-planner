@@ -14,16 +14,16 @@ export async function weekPage(el: HTMLElement, ctx: Ctx, monday: string): Promi
     const missing = missingSlots(tomorrowDay);
     el.innerHTML = html`
       ${missing.length
-        ? html`<p class="banner">Tomorrow (${dayLabel(tomorrow)}) has no ${missing.map((s) => SLOT_LABEL[s].toLowerCase()).join(", ")} planned.
-            ${dates.includes(tomorrow) ? "" : html`<a href="#/week/${mondayOf(tomorrow)}">Go to that week</a>`}</p>`
+        ? html`<p class="banner">Jutro (${dayLabel(tomorrow)}) brak zaplanowanych posiłków: ${missing.map((s) => SLOT_LABEL[s].toLowerCase()).join(", ")}.
+            ${dates.includes(tomorrow) ? "" : html`<a href="#/week/${mondayOf(tomorrow)}">Przejdź do tego tygodnia</a>`}</p>`
         : ""}
       <div class="toolbar">
-        <a class="button ghost" href="#/week/${addDays(monday, -7)}" aria-label="Previous week">‹</a>
+        <a class="button ghost" href="#/week/${addDays(monday, -7)}" aria-label="Poprzedni tydzień">‹</a>
         <h1>${dayLabel(dates[0], { day: "numeric", month: "short" })} – ${dayLabel(dates[6], { day: "numeric", month: "short" })}</h1>
-        <a class="button ghost" href="#/week/${addDays(monday, 7)}" aria-label="Next week">›</a>
+        <a class="button ghost" href="#/week/${addDays(monday, 7)}" aria-label="Następny tydzień">›</a>
         <span class="spacer"></span>
-        <button type="button" id="autofill">Auto-fill empty slots</button>
-        <a class="button ghost" href="#/shop?from=${dates[0]}&to=${dates[6]}">Shopping list</a>
+        <button type="button" id="autofill">Uzupełnij puste posiłki</button>
+        <a class="button ghost" href="#/shop?from=${dates[0]}&to=${dates[6]}">Lista zakupów</a>
       </div>
       <div class="week">
         ${dates.map((d) => dayCard(ctx, d, days[d], d === today()))}
@@ -45,19 +45,19 @@ export async function weekPage(el: HTMLElement, ctx: Ctx, monday: string): Promi
     const list = sortForSlot(ctx, ctx.recipes.filter((r) => r.slots.includes(slot)));
     dialog.innerHTML = html`
       <form method="dialog" class="picker">
-        <header><strong>${SLOT_LABEL[slot]} · ${dayLabel(date)}</strong><button value="" class="ghost">Close</button></header>
+        <header><strong>${SLOT_LABEL[slot]} · ${dayLabel(date)}</strong><button value="" class="ghost">Zamknij</button></header>
         <ul>
           ${list.map(
             (r) => html`<li class="${r.id === current ? "on" : ""}">
               <button value="${r.id}" class="pick">
                 <span class="name">${r.name}</span>
-                <span class="meta">${g(ctx.macros(r).protein)} protein · ${r.minutes} min ${effort(r)}</span>
+                <span class="meta">${g(ctx.macros(r).protein)} białka · ${r.minutes} min ${effort(r)}</span>
               </button>
-              <a href="#/recipe/${r.id}" class="small">view</a>
+              <a href="#/recipe/${r.id}" class="small">zobacz</a>
             </li>`,
           )}
         </ul>
-        ${current ? html`<button value="-" class="ghost danger">Clear slot</button>` : ""}
+        ${current ? html`<button value="-" class="ghost danger">Wyczyść posiłek</button>` : ""}
       </form>`.value;
     dialog.onclose = async () => {
       const v = dialog.returnValue;
@@ -89,16 +89,16 @@ function dayCard(ctx: Ctx, date: string, day: Day | undefined, isToday: boolean)
       <strong>${dayLabel(date)}</strong>
       <span class="small muted">${Math.round(total.kcal)} kcal</span>
     </header>
-    <div class="bar ${status}" title="${g(total.protein)} of ${PROTEIN_TARGET} g protein"><span style="width:${pct}%"></span></div>
-    <p class="small protein">${g(total.protein)} / ${PROTEIN_TARGET} g protein</p>
+    <div class="bar ${status}" title="${g(total.protein)} z ${PROTEIN_TARGET} g białka"><span style="width:${pct}%"></span></div>
+    <p class="small protein">${g(total.protein)} / ${PROTEIN_TARGET} g białka</p>
     ${SLOTS.map((s) => {
       const r = day?.[s] && ctx.byId.get(day[s]!);
       return html`<div class="slot">
         <span class="label">${SLOT_LABEL[s]}</span>
         <button type="button" class="slot-btn ${r ? "" : "empty"}" data-date="${date}" data-slot="${s}">
-          ${r ? html`<span class="name">${r.name}</span><span class="meta">${g(ctx.macros(r).protein)} · ${r.minutes} min ${effort(r)}</span>` : "+ choose"}
+          ${r ? html`<span class="name">${r.name}</span><span class="meta">${g(ctx.macros(r).protein)} · ${r.minutes} min ${effort(r)}</span>` : "+ wybierz"}
         </button>
-        ${r ? html`<a class="cook-link" href="#/cook/${r.id}" title="Cook">▶</a>` : ""}
+        ${r ? html`<a class="cook-link" href="#/cook/${r.id}" title="Gotuj">▶</a>` : ""}
       </div>`;
     })}
   </section>`;

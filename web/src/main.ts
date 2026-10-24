@@ -17,10 +17,10 @@ let cleanup: (() => void) | void;
 
 function renderNav(user?: { name: string; signOut: () => void }): void {
   nav.innerHTML = html`
-    <a href="#/week">Week</a>
-    <a href="#/recipes">Recipes</a>
-    <a href="#/shop">Shop</a>
-    ${user ? html`<button type="button" class="link small" id="logout" title="${user.name}">Sign out</button>` : ""}`.value;
+    <a href="#/week">Tydzień</a>
+    <a href="#/recipes">Przepisy</a>
+    <a href="#/shop">Zakupy</a>
+    ${user ? html`<button type="button" class="link small" id="logout" title="${user.name}">Wyloguj</button>` : ""}`.value;
   if (user) document.getElementById("logout")!.addEventListener("click", user.signOut);
 }
 
@@ -44,7 +44,7 @@ async function route(): Promise<void> {
     if (page !== "cook") window.scrollTo(0, 0);
   } catch (e) {
     console.error(e);
-    app.innerHTML = html`<h1>Something went wrong</h1><p class="muted">${(e as Error).message}</p><p><a href="#/week">Back to the week</a></p>`.value;
+    app.innerHTML = html`<h1>Coś poszło nie tak</h1><p class="muted">${(e as Error).message}</p><p><a href="#/week">Wróć do tygodnia</a></p>`.value;
   }
 }
 
@@ -56,8 +56,8 @@ if (firebaseConfigured) {
     if (!user) {
       ctx = undefined;
       renderNav();
-      app.innerHTML = html`<div class="signin"><h1>Protein planner</h1><p class="muted">Plan three high-protein meals a day, hit 140 g of protein.</p>
-        <button type="button" class="big" id="signin">Sign in with Google</button></div>`.value;
+      app.innerHTML = html`<div class="signin"><h1>Planer białkowy</h1><p class="muted">Trzy wysokobiałkowe posiłki dziennie, 140 g białka.</p>
+        <button type="button" class="big" id="signin">Zaloguj przez Google</button></div>`.value;
       document.getElementById("signin")!.addEventListener("click", () => void fb.signIn().catch((e) => alert(e.message)));
       return;
     }

@@ -3,7 +3,7 @@
 import { cert, initializeApp } from "firebase-admin/app";
 import { FieldPath, getFirestore } from "firebase-admin/firestore";
 import nodemailer from "nodemailer";
-import { SLOTS, type Day } from "../web/src/model.ts";
+import { SLOTS, type Day, type Slot } from "../web/src/model.ts";
 import { addDays, missingSlots, mondayOf, weekDates } from "../web/src/plan.ts";
 
 const APP_URL = "https://lucroth.github.io/protein-planner/";
@@ -29,6 +29,7 @@ const today = warsaw("date");
 const tomorrow = addDays(today, 1);
 const nextWeek = weekDates(addDays(mondayOf(today), 7));
 const sunday = warsaw("weekday") === "Sun";
+const SLOT_PL: Record<Slot, string> = { breakfast: "śniadanie", dinner: "obiad", supper: "kolacja" };
 
 const mailer = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -44,22 +45,22 @@ for (const user of (await db.collection("users").get()).docs) {
   const lines: string[] = [];
 
   const missing = missingSlots((await days.doc(tomorrow).get()).data() as Day | undefined);
-  if (missing.length) lines.push(`Tomorrow (${tomorrow}) has nothing planned for: ${missing.join(", ")}.`);
+  if (missing.length) lines.push(`Na jutro (${tomorrow}) brak zaplanowanych posiłków: ${missing.map((s) => SLOT_PL[s]).join(", ")}.`);
 
   if (sunday) {
     const snap = await days.where(FieldPath.documentId(), ">=", nextWeek[0]).where(FieldPath.documentId(), "<=", nextWeek[6]).get();
     const planned = snap.docs.reduce((n, d) => n + SLOTS.filter((s) => d.get(s)).length, 0);
-    if (planned < 21 / 2) lines.push(`Next week (${nextWeek[0]} – ${nextWeek[6]}) has only ${planned} of 21 meals planned. Plan it and order the groceries.`);
+    if (planned < 21 / 2) lines.push(`Na przyszły tydzień (${nextWeek[0]} – ${nextWeek[6]}) zaplanowano tylko ${planned} z 21 posiłków. Zaplanuj go i zamów zakupy.`);
   }
 
   if (!lines.length) {
     console.log(`${email}: all planned.`);
     continue;
   }
-  const text = `${lines.join("\n\n")}\n\nPlan: ${APP_URL}`;
+  const text = `${lines.join("\n\n")}\n\nZaplanuj: ${APP_URL}`;
   if (dry) console.log(`--- ${email}\n${text}`);
   else {
-    await mailer.sendMail({ from: process.env.GMAIL_USER, to: email, subject: "Plan your meals", text });
+    await mailer.sendMail({ from: process.env.GMAIL_USER, to: email, subject: "Zaplanuj posiłki", text });
     console.log(`${email}: reminded.`);
   }
 }
